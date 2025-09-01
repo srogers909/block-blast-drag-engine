@@ -14,9 +14,11 @@ void main() {
       expect(controller.currentPosition, null);
     });
 
-    test('should start drag operation at specified position', () {
+    test('should start drag operation when block exists at position', () {
       const testPosition = Offset(100, 200);
+      const testBlock = DraggableBlock(x: 50, y: 150, width: 100, height: 100);
       
+      controller.addBlock(testBlock);
       controller.startDrag(testPosition);
       
       expect(controller.isDragging, true);
@@ -26,7 +28,9 @@ void main() {
     test('should update drag position during active drag', () {
       const startPosition = Offset(100, 200);
       const newPosition = Offset(150, 250);
+      const testBlock = DraggableBlock(x: 50, y: 150, width: 100, height: 100);
       
+      controller.addBlock(testBlock);
       controller.startDrag(startPosition);
       controller.updateDragPosition(newPosition);
       

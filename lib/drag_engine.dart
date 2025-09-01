@@ -7,6 +7,9 @@ library drag_engine;
 
 // Core exports will be added here as we develop the drag engine
 export 'src/drag_controller.dart';
+export 'src/draggable_block.dart';
+export 'src/drop_shadow.dart';
+export 'src/game_grid.dart';
 
 /// Version of the drag engine package
 const String version = '0.1.0';
